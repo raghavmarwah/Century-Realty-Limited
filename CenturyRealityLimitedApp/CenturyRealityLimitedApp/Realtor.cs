@@ -23,5 +23,11 @@ namespace CenturyRealityLimitedApp
             Username = uName;
             Password = pass;
         }
+        public Realtor() { }
+
+        public override string ToString()
+        {
+            return ($"{FirstName}, {LastName}, {Username.Trim()}, {Password}");
+        }
     }
 }

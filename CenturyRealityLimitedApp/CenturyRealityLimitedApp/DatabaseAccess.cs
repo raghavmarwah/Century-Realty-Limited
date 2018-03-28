@@ -54,5 +54,54 @@ namespace CenturyRealityLimitedApp
                 }
             }
         }
+
+        /// <summary>
+        /// Truncate a table, but this does not reseed identity
+        /// </summary>
+        /// <param name="table"></param>
+
+        public void TruncateData(string table)
+        {
+            string sql = "TRUNCATE TABLE " + table;
+
+            // Execute using our connection.
+            using (SqlCommand command = new SqlCommand(sql, dbConnection))
+            {
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch (SqlException ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Using SQL Select, return a List of all realtors in the database
+        /// </summary>
+        /// <returns>List of realtors</returns>
+        public List<Realtor> GetRealtors()
+        {
+            List<Realtor> realtorsList = new List<Realtor>();
+            string sql = "Select * From Realtors";
+            using (SqlCommand command = new SqlCommand(sql, dbConnection))
+            {
+                SqlDataReader dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    realtorsList.Add(new Realtor
+                    {
+                        FirstName = (String)dataReader["FirstName"],
+                        LastName = (String)dataReader["LastName"],
+                        Username = (String)dataReader["UserName"],
+                        Password = (String)dataReader["Password"],
+                    });
+                }
+                dataReader.Close();
+            }
+            return realtorsList;
+        }
     }
 }

@@ -43,6 +43,7 @@
             this.textBoxFirstName = new System.Windows.Forms.TextBox();
             this.buttonCreateAccount = new System.Windows.Forms.Button();
             this.buttonClearForm = new System.Windows.Forms.Button();
+            this.labelInfoDisplay = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMainLogo)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -216,12 +217,26 @@
             this.buttonClearForm.UseVisualStyleBackColor = false;
             this.buttonClearForm.Click += new System.EventHandler(this.buttonClearForm_Click);
             // 
+            // labelInfoDisplay
+            // 
+            this.labelInfoDisplay.AutoSize = true;
+            this.labelInfoDisplay.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInfoDisplay.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.labelInfoDisplay.Location = new System.Drawing.Point(925, 839);
+            this.labelInfoDisplay.Name = "labelInfoDisplay";
+            this.labelInfoDisplay.Size = new System.Drawing.Size(379, 45);
+            this.labelInfoDisplay.TabIndex = 13;
+            this.labelInfoDisplay.Text = "Username already exists!";
+            this.labelInfoDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelInfoDisplay.Visible = false;
+            // 
             // FormNewRealtorSignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(251)))), ((int)(((byte)(232)))));
             this.ClientSize = new System.Drawing.Size(1704, 1004);
+            this.Controls.Add(this.labelInfoDisplay);
             this.Controls.Add(this.buttonClearForm);
             this.Controls.Add(this.buttonCreateAccount);
             this.Controls.Add(this.labelFirstName);
@@ -262,5 +277,6 @@
         private System.Windows.Forms.TextBox textBoxFirstName;
         private System.Windows.Forms.Button buttonCreateAccount;
         private System.Windows.Forms.Button buttonClearForm;
+        private System.Windows.Forms.Label labelInfoDisplay;
     }
 }
