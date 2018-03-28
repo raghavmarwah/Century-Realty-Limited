@@ -29,7 +29,7 @@ namespace CenturyRealityLimitedApp
             buttonSignUp.FlatAppearance.BorderSize = 0;
 
             //additional startup code
-            textBoxRealtorId.Text = "";
+            textBoxRealtorUsername.Text = "";
             textBoxRealtorPassword.Text = "";
         }
 
@@ -37,6 +37,20 @@ namespace CenturyRealityLimitedApp
         {
             //close the form
             this.Close();
+            //close the application
+            Application.Exit();
+        }
+        
+        /// <summary>
+        /// Hides the current form and displays FormNewRealtorSignUp
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonSignUp_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormNewRealtorSignUp signUpForm = new FormNewRealtorSignUp();
+            signUpForm.Show();
         }
     }
 }

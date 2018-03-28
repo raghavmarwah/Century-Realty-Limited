@@ -32,10 +32,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBoxMainLogo = new System.Windows.Forms.PictureBox();
             this.buttonCloseForm = new System.Windows.Forms.Button();
-            this.textBoxRealtorId = new System.Windows.Forms.TextBox();
+            this.textBoxRealtorUsername = new System.Windows.Forms.TextBox();
             this.textBoxRealtorPassword = new System.Windows.Forms.TextBox();
             this.labelRealtorLoginInfo = new System.Windows.Forms.Label();
-            this.labelRealtorId = new System.Windows.Forms.Label();
+            this.labelRealtorUsername = new System.Windows.Forms.Label();
             this.labelRealtorPassword = new System.Windows.Forms.Label();
             this.buttonLogin = new System.Windows.Forms.Button();
             this.buttonSignUp = new System.Windows.Forms.Button();
@@ -79,16 +79,16 @@
             this.buttonCloseForm.UseVisualStyleBackColor = false;
             this.buttonCloseForm.Click += new System.EventHandler(this.buttonCloseForm_Click);
             // 
-            // textBoxRealtorId
+            // textBoxRealtorUsername
             // 
-            this.textBoxRealtorId.AcceptsTab = true;
-            this.textBoxRealtorId.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxRealtorId.Font = new System.Drawing.Font("Segoe UI", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRealtorId.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBoxRealtorId.Location = new System.Drawing.Point(988, 478);
-            this.textBoxRealtorId.Name = "textBoxRealtorId";
-            this.textBoxRealtorId.Size = new System.Drawing.Size(486, 58);
-            this.textBoxRealtorId.TabIndex = 2;
+            this.textBoxRealtorUsername.AcceptsTab = true;
+            this.textBoxRealtorUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxRealtorUsername.Font = new System.Drawing.Font("Segoe UI", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxRealtorUsername.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.textBoxRealtorUsername.Location = new System.Drawing.Point(988, 478);
+            this.textBoxRealtorUsername.Name = "textBoxRealtorUsername";
+            this.textBoxRealtorUsername.Size = new System.Drawing.Size(486, 58);
+            this.textBoxRealtorUsername.TabIndex = 2;
             // 
             // textBoxRealtorPassword
             // 
@@ -114,16 +114,17 @@
             this.labelRealtorLoginInfo.TabIndex = 4;
             this.labelRealtorLoginInfo.Text = "Realtor Login";
             // 
-            // labelRealtorId
+            // labelRealtorUsername
             // 
-            this.labelRealtorId.AutoSize = true;
-            this.labelRealtorId.Font = new System.Drawing.Font("Segoe UI", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRealtorId.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.labelRealtorId.Location = new System.Drawing.Point(754, 478);
-            this.labelRealtorId.Name = "labelRealtorId";
-            this.labelRealtorId.Size = new System.Drawing.Size(228, 59);
-            this.labelRealtorId.TabIndex = 5;
-            this.labelRealtorId.Text = "Realtor Id: ";
+            this.labelRealtorUsername.AutoSize = true;
+            this.labelRealtorUsername.Font = new System.Drawing.Font("Segoe UI", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRealtorUsername.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.labelRealtorUsername.Location = new System.Drawing.Point(754, 478);
+            this.labelRealtorUsername.Name = "labelRealtorUsername";
+            this.labelRealtorUsername.Size = new System.Drawing.Size(224, 59);
+            this.labelRealtorUsername.TabIndex = 5;
+            this.labelRealtorUsername.Text = "Username:";
+            this.labelRealtorUsername.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelRealtorPassword
             // 
@@ -161,26 +162,25 @@
             this.buttonSignUp.TabIndex = 7;
             this.buttonSignUp.Text = "SignUp";
             this.buttonSignUp.UseVisualStyleBackColor = false;
+            this.buttonSignUp.Click += new System.EventHandler(this.buttonSignUp_Click);
             // 
             // FormUserLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(251)))), ((int)(((byte)(232)))));
             this.ClientSize = new System.Drawing.Size(1700, 1075);
             this.Controls.Add(this.buttonSignUp);
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.labelRealtorPassword);
-            this.Controls.Add(this.labelRealtorId);
+            this.Controls.Add(this.labelRealtorUsername);
             this.Controls.Add(this.labelRealtorLoginInfo);
             this.Controls.Add(this.textBoxRealtorPassword);
-            this.Controls.Add(this.textBoxRealtorId);
+            this.Controls.Add(this.textBoxRealtorUsername);
             this.Controls.Add(this.buttonCloseForm);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormUserLogin";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.FormUserLogin_Load);
             this.panel1.ResumeLayout(false);
@@ -195,10 +195,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBoxMainLogo;
         private System.Windows.Forms.Button buttonCloseForm;
-        private System.Windows.Forms.TextBox textBoxRealtorId;
+        private System.Windows.Forms.TextBox textBoxRealtorUsername;
         private System.Windows.Forms.TextBox textBoxRealtorPassword;
         private System.Windows.Forms.Label labelRealtorLoginInfo;
-        private System.Windows.Forms.Label labelRealtorId;
+        private System.Windows.Forms.Label labelRealtorUsername;
         private System.Windows.Forms.Label labelRealtorPassword;
         private System.Windows.Forms.Button buttonLogin;
         private System.Windows.Forms.Button buttonSignUp;
