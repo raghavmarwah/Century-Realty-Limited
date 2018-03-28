@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseAccess.cs" />
+    <Compile Include="FormDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDashboard.Designer.cs">
+      <DependentUpon>FormDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormNewRealtorSignUp.cs">
       <SubType>Form</SubType>
     </Compile>

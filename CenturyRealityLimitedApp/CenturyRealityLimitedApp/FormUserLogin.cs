@@ -84,7 +84,11 @@ namespace CenturyRealityLimitedApp
                 .Select(r => r);
 
             if (queryLoginCheck.Count() > 0)
-                MessageBox.Show("Yes");
+            {
+                FormDashboard formDashboard = new FormDashboard();
+                formDashboard.Show();
+                this.Close();
+            }
             else
             {
                 MessageBox.Show("Invalid Credentials");
