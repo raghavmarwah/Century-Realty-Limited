@@ -33,7 +33,7 @@
             this.buttonSellListing = new System.Windows.Forms.Button();
             this.buttonRefresh = new System.Windows.Forms.Button();
             this.buttonViewAgents = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.buttonPastListings = new System.Windows.Forms.Button();
             this.labelDisplayUser = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActiveListings)).BeginInit();
@@ -86,15 +86,17 @@
             this.buttonViewAgents.TabIndex = 4;
             this.buttonViewAgents.Text = "View Agents";
             this.buttonViewAgents.UseVisualStyleBackColor = true;
+            this.buttonViewAgents.Click += new System.EventHandler(this.buttonViewAgents_Click);
             // 
-            // button4
+            // buttonPastListings
             // 
-            this.button4.Location = new System.Drawing.Point(67, 754);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(221, 108);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.buttonPastListings.Location = new System.Drawing.Point(67, 754);
+            this.buttonPastListings.Name = "buttonPastListings";
+            this.buttonPastListings.Size = new System.Drawing.Size(221, 108);
+            this.buttonPastListings.TabIndex = 5;
+            this.buttonPastListings.Text = "Past Listings";
+            this.buttonPastListings.UseVisualStyleBackColor = true;
+            this.buttonPastListings.Click += new System.EventHandler(this.buttonPastListings_Click);
             // 
             // labelDisplayUser
             // 
@@ -121,7 +123,7 @@
             this.ClientSize = new System.Drawing.Size(1977, 1199);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.labelDisplayUser);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.buttonPastListings);
             this.Controls.Add(this.buttonViewAgents);
             this.Controls.Add(this.buttonRefresh);
             this.Controls.Add(this.buttonSellListing);
@@ -142,7 +144,7 @@
         private System.Windows.Forms.Button buttonSellListing;
         private System.Windows.Forms.Button buttonRefresh;
         private System.Windows.Forms.Button buttonViewAgents;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button buttonPastListings;
         private System.Windows.Forms.Label labelDisplayUser;
         private System.Windows.Forms.Button button1;
     }

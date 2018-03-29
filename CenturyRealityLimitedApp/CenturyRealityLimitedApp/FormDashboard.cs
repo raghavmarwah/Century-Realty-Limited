@@ -69,7 +69,7 @@ namespace CenturyRealityLimitedApp
 
         }
         /// <summary>
-        /// Adds the data to dataGridViewActiveListins from listingsList
+        /// Adds the data to dataGridViewActiveListings from listingsList
         /// </summary>
         private void FeedDataToDataGridView()
         {
@@ -112,6 +112,18 @@ namespace CenturyRealityLimitedApp
             int listingId = int.Parse(dataGridViewActiveListings.CurrentRow.Cells[0].Value.ToString());
             FormSellListing sellListing = new FormSellListing(realtorId, listingId);
             sellListing.Show();
+        }
+
+        private void buttonViewAgents_Click(object sender, EventArgs e)
+        {
+            FormViewAgents viewAgents = new FormViewAgents();
+            viewAgents.Show();
+        }
+
+        private void buttonPastListings_Click(object sender, EventArgs e)
+        {
+            FormPastListings pastListings = new FormPastListings();
+            pastListings.Show();
         }
     }
 }

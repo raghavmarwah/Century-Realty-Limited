@@ -65,6 +65,12 @@
     <Compile Include="FormNewRealtorSignUp.Designer.cs">
       <DependentUpon>FormNewRealtorSignUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPastListings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPastListings.Designer.cs">
+      <DependentUpon>FormPastListings.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSellListing.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,12 @@
       <DependentUpon>FormUserLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="CenturyRealityProgram.cs" />
+    <Compile Include="FormViewAgents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormViewAgents.Designer.cs">
+      <DependentUpon>FormViewAgents.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Property.cs" />
     <Compile Include="Realtor.cs" />
@@ -90,11 +102,17 @@
     <EmbeddedResource Include="FormNewRealtorSignUp.resx">
       <DependentUpon>FormNewRealtorSignUp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormPastListings.resx">
+      <DependentUpon>FormPastListings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormSellListing.resx">
       <DependentUpon>FormSellListing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUserLogin.resx">
       <DependentUpon>FormUserLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormViewAgents.resx">
+      <DependentUpon>FormViewAgents.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
