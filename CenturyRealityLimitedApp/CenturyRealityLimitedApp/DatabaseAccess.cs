@@ -127,5 +127,40 @@ namespace CenturyRealityLimitedApp
             }
             return realtorsList;
         }
+
+        /// <summary>
+        /// Using SQL Select, return a List of all listings in the database
+        /// </summary>
+        /// <returns>List of listings</returns>
+        public List<Property> GetListings()
+        {
+            List<Property> listingsList = new List<Property>();
+            string sql = "Select * From Listings";
+            using (SqlCommand command = new SqlCommand(sql, dbConnection))
+            {
+                SqlDataReader dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    listingsList.Add(new Property
+                    {
+                        StreetAddress = (String)dataReader["StreetAddress"],
+                        City = (String)dataReader["City"],
+                        Pincode = (String)dataReader["Pincode"],
+                        Province = (String)dataReader["Province"],
+                        HouseType = (String)dataReader["HouseType"],
+                        NumberOfBedrooms = (int)dataReader["Bedrooms"],
+                        NumberOfBathrooms = (int)dataReader["Bathrooms"],
+                        FloorArea = (decimal)dataReader["FloorArea"],
+                        SellerName = (String)dataReader["SellerName"],
+                        ListPrice = (decimal)dataReader["ListPrice"],
+                        IsAvailable = (bool)dataReader["Available"],
+                        SellDate = (DateTime)dataReader["SellDate"],
+                        RealtorId = (int)dataReader["RealtorId"],
+                    });
+                }
+                dataReader.Close();
+            }
+            return listingsList;
+        }
     }
 }
