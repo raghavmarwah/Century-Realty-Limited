@@ -44,10 +44,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1314, 1145);
+            this.ClientSize = new System.Drawing.Size(1314, 1007);
             this.Controls.Add(this.customerReport);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormCustomerReport";
-            this.Text = "FormCustomerReport";
+            this.Text = "Customer Report";
             this.Load += new System.EventHandler(this.FormCustomerReport_Load);
             this.ResumeLayout(false);
 

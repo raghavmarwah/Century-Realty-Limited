@@ -39,12 +39,13 @@
             this.dataGridViewAgents.Location = new System.Drawing.Point(19, 24);
             this.dataGridViewAgents.Name = "dataGridViewAgents";
             this.dataGridViewAgents.RowTemplate.Height = 33;
-            this.dataGridViewAgents.Size = new System.Drawing.Size(1203, 643);
+            this.dataGridViewAgents.Size = new System.Drawing.Size(1029, 643);
             this.dataGridViewAgents.TabIndex = 0;
             // 
             // buttonUpdateData
             // 
-            this.buttonUpdateData.Location = new System.Drawing.Point(452, 751);
+            this.buttonUpdateData.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonUpdateData.Location = new System.Drawing.Point(397, 725);
             this.buttonUpdateData.Name = "buttonUpdateData";
             this.buttonUpdateData.Size = new System.Drawing.Size(262, 89);
             this.buttonUpdateData.TabIndex = 1;
@@ -56,11 +57,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1260, 1029);
+            this.ClientSize = new System.Drawing.Size(1071, 879);
             this.Controls.Add(this.buttonUpdateData);
             this.Controls.Add(this.dataGridViewAgents);
             this.Name = "FormViewAgents";
-            this.Text = "FormViewAgents";
+            this.Text = "View Agents";
             this.Load += new System.EventHandler(this.FormViewAgents_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAgents)).EndInit();
             this.ResumeLayout(false);

@@ -29,11 +29,17 @@ namespace CenturyRealityLimitedApp
 
         private void FormDashboard_Load(object sender, EventArgs e)
         {
-
             UpdateListings();
             InitializeDataGridView();
             FeedDataToDataGridView();
 
+            this.Width = 1100;
+            this.Height = 600;
+
+            buttonViewAgents.FlatAppearance.BorderSize = 0;
+            buttonPastListings.FlatAppearance.BorderSize = 0;
+            buttonEditProfile.FlatAppearance.BorderSize = 0;
+            buttonCloseForm.FlatAppearance.BorderSize = 0;
         }
 
         /// <summary>
@@ -129,6 +135,11 @@ namespace CenturyRealityLimitedApp
         {
             FormEditProfile editProfile = new FormEditProfile(realtorId);
             editProfile.Show();
+        }
+
+        private void buttonCloseForm_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

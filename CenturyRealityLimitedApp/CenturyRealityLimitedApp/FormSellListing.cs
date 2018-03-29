@@ -42,7 +42,7 @@ namespace CenturyRealityLimitedApp
             else
                 agentCommission = (decimal)(((double)currentProperty.ListPrice - 100000) * 0.03 + 100000 * 0.08);
 
-            decimal updatedCommissionEarned = currentRealtor.CommissionEarned + (agentCommission/2) - 300;
+            decimal updatedCommissionEarned = currentRealtor.CommissionEarned + (agentCommission / 2) - 300;
             decimal updatedCompanyEarnings = currentRealtor.CompanyEarnings + 300;
 
             access.UpdateRealtorIncome(realtorId, updatedCommissionEarned, updatedCompanyEarnings);
@@ -62,7 +62,7 @@ namespace CenturyRealityLimitedApp
                                 $"Street Address:\t{currentProperty.StreetAddress}\n" +
                                 $"City:\t\t\t{currentProperty.City}\nProvince: \t\t{currentProperty.Province}\n" +
                                 $"Pincode:\t\t{currentProperty.Pincode}\n\n";
-                                
+
             if (currentProperty.ListPrice <= 100000)
             {
                 agentCommission = 0.08m * currentProperty.ListPrice;
@@ -74,12 +74,12 @@ namespace CenturyRealityLimitedApp
             else
             {
                 agentCommission = (decimal)(((double)currentProperty.ListPrice - 100000) * 0.03 + 100000 * 0.08);
-                saleReport += $"Evaluated property cost:\t\t\t\t\t{currentProperty.ListPrice.ToString("c2")}\n\n"+
-                              $"Agent commission (8% upto 100k, 3% on additional):\t{agentCommission.ToString("c2")}\n"+
+                saleReport += $"Evaluated property cost:\t\t\t\t\t{currentProperty.ListPrice.ToString("c2")}\n\n" +
+                              $"Agent commission (8% upto 100k, 3% on additional):\t{agentCommission.ToString("c2")}\n" +
                               $"My commission (1/2 for buyer's agent):\t\t\t{(agentCommission / 2).ToString("c2")}\n\n" +
                               $"Total commission (-$300 company fee):\t\t\t{((agentCommission / 2) - 300).ToString("c2")}";
             }
-                    
+
             realtorReport.Text = saleReport;
             buttonSellListing.Enabled = true;
         }

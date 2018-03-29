@@ -28,22 +28,31 @@ namespace CenturyRealityLimitedApp
             DatabaseAccess access = new DatabaseAccess();
             access.OpenConnection();
 
-            access.InsertListing(new Property
+            try
             {
-                StreetAddress = textBoxStreetAddress.Text,
-                City = textBoxCity.Text,
-                Pincode = textBoxPincode.Text,
-                Province = textBoxProvince.Text,
-                HouseType = listBoxHouseType.GetItemText(listBoxHouseType.SelectedItem),
-                NumberOfBedrooms = int.Parse(textBoxBedrooms.Text),
-                NumberOfBathrooms = int.Parse(textBoxBathrooms.Text),
-                FloorArea = decimal.Parse(textBoxFloorArea.Text),
-                SellerName = textBoxSellerName.Text,
-                ListPrice = decimal.Parse(textBoxListPrice.Text),
-                IsAvailable = true
-            });
+                access.InsertListing(new Property
+                {
+                    StreetAddress = textBoxStreetAddress.Text,
+                    City = textBoxCity.Text,
+                    Pincode = textBoxPincode.Text,
+                    Province = textBoxProvince.Text,
+                    HouseType = listBoxHouseType.GetItemText(listBoxHouseType.SelectedItem),
+                    NumberOfBedrooms = int.Parse(textBoxBedrooms.Text),
+                    NumberOfBathrooms = int.Parse(textBoxBathrooms.Text),
+                    FloorArea = decimal.Parse(textBoxFloorArea.Text),
+                    SellerName = textBoxSellerName.Text,
+                    ListPrice = decimal.Parse(textBoxListPrice.Text),
+                    IsAvailable = true
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Please check the entered details!");
+            }
 
             access.CloseConnection();
+            MessageBox.Show("Listing added successfully!");
+            this.Close();
         }
     }
 }
