@@ -40,8 +40,8 @@ namespace CenturyRealityLimitedApp
         /// <param name="r">Realtor Object</param>
         public void InsertRealtor(Realtor r)
         {
-            string sql = "Insert Into Realtors (FirstName, LastName, UserName, Password) Values" +
-                $"('{r.FirstName}', '{r.LastName}', '{r.Username}', '{r.Password}')";
+            string sql = "Insert Into Realtors (FirstName, LastName, UserName, Password, CommissionEarned, CompanyEarnings) Values" +
+                $"('{r.FirstName}', '{r.LastName}', '{r.Username}', '{r.Password}', '{r.CommissionEarned}', '{r.CompanyEarnings}')";
 
             using (SqlCommand command = new SqlCommand(sql, dbConnection))
             {
@@ -97,6 +97,8 @@ namespace CenturyRealityLimitedApp
                         LastName = (String)dataReader["LastName"],
                         Username = (String)dataReader["UserName"],
                         Password = (String)dataReader["Password"],
+                        CommissionEarned = (decimal)dataReader["CommissionEarned"],
+                        CompanyEarnings = (decimal)dataReader["CompanyEarnings"],
                     });
                 }
                 dataReader.Close();

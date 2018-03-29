@@ -87,7 +87,7 @@ namespace CenturyRealityLimitedApp
             {
                 FormDashboard formDashboard = new FormDashboard();
                 formDashboard.Show();
-                this.Close();
+                this.Hide();
             }
             else
             {

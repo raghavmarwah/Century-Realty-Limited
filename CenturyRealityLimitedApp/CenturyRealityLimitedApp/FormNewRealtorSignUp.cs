@@ -118,7 +118,10 @@ namespace CenturyRealityLimitedApp
                 if (textBoxFirstName.TextLength == 0 || textBoxLastName.TextLength == 0 || textBoxRealtorUsername.TextLength == 0 || textBoxRealtorPassword.TextLength == 0)
                     throw new Exception();
 
-                access.InsertRealtor(new Realtor(textBoxFirstName.Text, textBoxLastName.Text, textBoxRealtorUsername.Text, textBoxRealtorPassword.Text));
+                if (UsernameExists(textBoxRealtorUsername.Text))
+                    throw new Exception();
+
+                access.InsertRealtor(new Realtor(textBoxFirstName.Text, textBoxLastName.Text, textBoxRealtorUsername.Text, textBoxRealtorPassword.Text, 0, 0));
                 MessageBox.Show("Profile created successfully!!");
                 this.Close();
                 FormUserLogin userLogin = new FormUserLogin();
@@ -127,7 +130,7 @@ namespace CenturyRealityLimitedApp
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Input data is not in correct format");
+                MessageBox.Show("Invalid input, please try again!");
             }
             access.CloseConnection();
             
