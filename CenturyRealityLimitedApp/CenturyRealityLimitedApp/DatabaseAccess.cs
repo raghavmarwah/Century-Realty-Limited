@@ -220,7 +220,30 @@ namespace CenturyRealityLimitedApp
         /// <param name="companyAmount">CompanyEarnings</param>
         public void UpdateRealtorIncome(int realtorId, decimal selfAmount, decimal companyAmount)
         {
-            string sql = $"UPDATE Realtors SET  CommissionEarned = '{selfAmount}', CompanyEarnings = '{companyAmount}' WHERE RealtorId = {realtorId}";
+            string sql = $"UPDATE Realtors SET CommissionEarned = '{selfAmount}', CompanyEarnings = '{companyAmount}' WHERE RealtorId = {realtorId}";
+
+            // Execute using our connection.
+            using (SqlCommand command = new SqlCommand(sql, dbConnection))
+            {
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch (SqlException ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Updates the realtor password
+        /// </summary>
+        /// <param name="realtorId"></param>
+        /// <param name="newPassword"></param>
+        public void UpdateRealtorPassword(int realtorId, String newPassword)
+        {
+            string sql = $"UPDATE Realtors SET Password = '{newPassword}' WHERE RealtorId = {realtorId}";
 
             // Execute using our connection.
             using (SqlCommand command = new SqlCommand(sql, dbConnection))

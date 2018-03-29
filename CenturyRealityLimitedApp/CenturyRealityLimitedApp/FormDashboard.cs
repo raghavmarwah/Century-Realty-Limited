@@ -33,7 +33,6 @@ namespace CenturyRealityLimitedApp
             UpdateListings();
             InitializeDataGridView();
             FeedDataToDataGridView();
-            labelDisplayUser.Text = $"Welcome, {realtorId}!";
 
         }
 
@@ -124,6 +123,12 @@ namespace CenturyRealityLimitedApp
         {
             FormPastListings pastListings = new FormPastListings();
             pastListings.Show();
+        }
+
+        private void buttonEditProfile_Click(object sender, EventArgs e)
+        {
+            FormEditProfile editProfile = new FormEditProfile(realtorId);
+            editProfile.Show();
         }
     }
 }

@@ -34,8 +34,7 @@
             this.buttonRefresh = new System.Windows.Forms.Button();
             this.buttonViewAgents = new System.Windows.Forms.Button();
             this.buttonPastListings = new System.Windows.Forms.Button();
-            this.labelDisplayUser = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonEditProfile = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActiveListings)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,31 +97,22 @@
             this.buttonPastListings.UseVisualStyleBackColor = true;
             this.buttonPastListings.Click += new System.EventHandler(this.buttonPastListings_Click);
             // 
-            // labelDisplayUser
+            // buttonEditProfile
             // 
-            this.labelDisplayUser.AutoSize = true;
-            this.labelDisplayUser.Location = new System.Drawing.Point(679, 932);
-            this.labelDisplayUser.Name = "labelDisplayUser";
-            this.labelDisplayUser.Size = new System.Drawing.Size(70, 25);
-            this.labelDisplayUser.TabIndex = 6;
-            this.labelDisplayUser.Text = "label1";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(81, 931);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(206, 101);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonEditProfile.Location = new System.Drawing.Point(81, 931);
+            this.buttonEditProfile.Name = "buttonEditProfile";
+            this.buttonEditProfile.Size = new System.Drawing.Size(206, 101);
+            this.buttonEditProfile.TabIndex = 7;
+            this.buttonEditProfile.Text = "Edit Profile";
+            this.buttonEditProfile.UseVisualStyleBackColor = true;
+            this.buttonEditProfile.Click += new System.EventHandler(this.buttonEditProfile_Click);
             // 
             // FormDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1977, 1199);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.labelDisplayUser);
+            this.Controls.Add(this.buttonEditProfile);
             this.Controls.Add(this.buttonPastListings);
             this.Controls.Add(this.buttonViewAgents);
             this.Controls.Add(this.buttonRefresh);
@@ -134,7 +124,6 @@
             this.Load += new System.EventHandler(this.FormDashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActiveListings)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -145,7 +134,6 @@
         private System.Windows.Forms.Button buttonRefresh;
         private System.Windows.Forms.Button buttonViewAgents;
         private System.Windows.Forms.Button buttonPastListings;
-        private System.Windows.Forms.Label labelDisplayUser;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonEditProfile;
     }
 }
