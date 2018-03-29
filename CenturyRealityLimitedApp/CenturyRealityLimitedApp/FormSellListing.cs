@@ -83,5 +83,11 @@ namespace CenturyRealityLimitedApp
             realtorReport.Text = saleReport;
             buttonSellListing.Enabled = true;
         }
+
+        private void buttonCustomerReport_Click(object sender, EventArgs e)
+        {
+            FormCustomerReport customerReport = new FormCustomerReport(realtorId, listingId, dateTimePicker.Value);
+            customerReport.Show();
+        }
     }
 }

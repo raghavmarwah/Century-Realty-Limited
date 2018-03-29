@@ -88,6 +88,7 @@
             this.buttonCustomerReport.TabIndex = 5;
             this.buttonCustomerReport.Text = "Customer Report";
             this.buttonCustomerReport.UseVisualStyleBackColor = true;
+            this.buttonCustomerReport.Click += new System.EventHandler(this.buttonCustomerReport_Click);
             // 
             // FormSellListing
             // 
