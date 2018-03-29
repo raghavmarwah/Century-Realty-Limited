@@ -85,7 +85,7 @@ namespace CenturyRealityLimitedApp
 
             if (queryLoginCheck.Count() > 0)
             {
-                FormDashboard formDashboard = new FormDashboard();
+                FormDashboard formDashboard = new FormDashboard(queryLoginCheck.ToArray()[0].RealtorId);
                 formDashboard.Show();
                 this.Hide();
             }

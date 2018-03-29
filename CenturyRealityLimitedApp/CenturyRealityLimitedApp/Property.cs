@@ -8,6 +8,7 @@ namespace CenturyRealityLimitedApp
 {
     class Property
     {
+        public int ListingId { get; set; }
         public String StreetAddress { get; set; }
         public String City { get; set; }
         public String Pincode { get; set; }

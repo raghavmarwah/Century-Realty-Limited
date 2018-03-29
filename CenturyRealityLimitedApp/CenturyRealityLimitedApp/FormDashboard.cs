@@ -13,10 +13,12 @@ namespace CenturyRealityLimitedApp
     public partial class FormDashboard : Form
     {
         List<Property> listingsList = null;
+        int realtorId = 0;
 
-        public FormDashboard()
+        public FormDashboard(int id)
         {
             InitializeComponent();
+            realtorId = id;
         }
 
         private void buttonAddListing_Click(object sender, EventArgs e)
@@ -31,6 +33,7 @@ namespace CenturyRealityLimitedApp
             UpdateListings();
             InitializeDataGridView();
             FeedDataToDataGridView();
+            labelDisplayUser.Text = $"Welcome, {realtorId}!";
 
         }
 
@@ -50,6 +53,7 @@ namespace CenturyRealityLimitedApp
 
             //Defining columns to add to the DataGridView
             DataGridViewTextBoxColumn[] columns = new DataGridViewTextBoxColumn[] {
+                new DataGridViewTextBoxColumn() {Name = "Listing Id" },
                 new DataGridViewTextBoxColumn() { Name = "Street Address" },
                 new DataGridViewTextBoxColumn() { Name = "City" },
                 new DataGridViewTextBoxColumn() { Name = "Pincode" },
@@ -70,12 +74,13 @@ namespace CenturyRealityLimitedApp
         private void FeedDataToDataGridView()
         {
             var dataOrderQuery = listingsList
-                .OrderBy(p => p.FloorArea)
+                .Where(p => p.IsAvailable == true)
+                .OrderBy(p => p.ListingId)
                 .Select(p => p);
 
             foreach(Property p in dataOrderQuery)
             {
-                dataGridViewActiveListings.Rows.Add(p.StreetAddress, p.City, p.Pincode, p.HouseType, p.NumberOfBedrooms, p.NumberOfBathrooms, p.FloorArea, p.ListPrice);
+                dataGridViewActiveListings.Rows.Add(p.ListingId, p.StreetAddress, p.City, p.Pincode, p.HouseType, p.NumberOfBedrooms, p.NumberOfBathrooms, p.FloorArea, p.ListPrice);
             }
         }
 
@@ -88,6 +93,25 @@ namespace CenturyRealityLimitedApp
             access.OpenConnection();
             listingsList = access.GetListings();
             access.CloseConnection();
+        }
+
+        /// <summary>
+        /// Updates the dataGridViewActiveListigs with fresh data.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonRefresh_Click(object sender, EventArgs e)
+        {
+            UpdateListings();
+            InitializeDataGridView();
+            FeedDataToDataGridView();
+        }
+
+        private void buttonSellListing_Click(object sender, EventArgs e)
+        {
+            int listingId = int.Parse(dataGridViewActiveListings.CurrentRow.Cells[0].Value.ToString());
+            FormSellListing sellListing = new FormSellListing(realtorId, listingId);
+            sellListing.Show();
         }
     }
 }

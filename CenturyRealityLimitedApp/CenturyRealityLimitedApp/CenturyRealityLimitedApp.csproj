@@ -65,6 +65,12 @@
     <Compile Include="FormNewRealtorSignUp.Designer.cs">
       <DependentUpon>FormNewRealtorSignUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSellListing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSellListing.Designer.cs">
+      <DependentUpon>FormSellListing.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormUserLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormNewRealtorSignUp.resx">
       <DependentUpon>FormNewRealtorSignUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSellListing.resx">
+      <DependentUpon>FormSellListing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUserLogin.resx">
       <DependentUpon>FormUserLogin.cs</DependentUpon>

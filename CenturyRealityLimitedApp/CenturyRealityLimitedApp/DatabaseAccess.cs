@@ -115,6 +115,7 @@ namespace CenturyRealityLimitedApp
                 {
                     realtorsList.Add(new Realtor
                     {
+                        RealtorId = (int)dataReader["RealtorId"],
                         FirstName = (String)dataReader["FirstName"],
                         LastName = (String)dataReader["LastName"],
                         Username = (String)dataReader["UserName"],
@@ -143,6 +144,7 @@ namespace CenturyRealityLimitedApp
                 {
                     listingsList.Add(new Property
                     {
+                        ListingId = (int)dataReader["ListingId"],
                         StreetAddress = (String)dataReader["StreetAddress"],
                         City = (String)dataReader["City"],
                         Pincode = (String)dataReader["Pincode"],
@@ -161,6 +163,77 @@ namespace CenturyRealityLimitedApp
                 dataReader.Close();
             }
             return listingsList;
+        }
+
+        /// <summary>
+        /// return a Property object with the given ListingId.
+        /// </summary>
+        /// <param name="listingId"></param>
+        /// <returns>Property Object</returns>
+        public Property GetProperty(int listingId)
+        {
+            List<Property> tempList = GetListings();
+            return tempList.Where(p => p.ListingId == listingId).Select(p => p).ToArray()[0];
+        }
+
+        /// <summary>
+        /// return a Realtor object with the given  RealtorId.
+        /// </summary>
+        /// <param name="realtorId"></param>
+        /// <returns>Realtor object</returns>
+        public Realtor GetRealtor(int realtorId)
+        {
+            List<Realtor> tempList = GetRealtors();
+            return tempList.Where(r => r.RealtorId == realtorId).Select(r => r).ToArray()[0];
+        }
+
+        /// <summary>
+        /// Updates listing in the tabel when it's is sold.
+        /// </summary>
+        /// <param name="realtorId"></param>
+        /// <param name="listingId"></param>
+        /// <param name="sellDate"></param>
+        public void SellListing(int realtorId, int listingId, DateTime sellDate)
+        {
+            string sql = $"UPDATE Listings SET RealtorId = '{realtorId}', SellDate = '{sellDate}', Available = 'false'" + 
+                $"WHERE ListingId = {listingId}";
+
+            // Execute using our connection.
+            using (SqlCommand command = new SqlCommand(sql, dbConnection))
+            {
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch (SqlException ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Updates the earning stats for the realtor
+        /// </summary>
+        /// <param name="realtorId">Realtor Id</param>
+        /// <param name="selfAmount">Commission Earned</param>
+        /// <param name="companyAmount">CompanyEarnings</param>
+        public void UpdateRealtorIncome(int realtorId, decimal selfAmount, decimal companyAmount)
+        {
+            string sql = $"UPDATE Realtors SET  CommissionEarned = '{selfAmount}', CompanyEarnings = '{companyAmount}' WHERE RealtorId = {realtorId}";
+
+            // Execute using our connection.
+            using (SqlCommand command = new SqlCommand(sql, dbConnection))
+            {
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch (SqlException ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}");
+                }
+            }
         }
     }
 }

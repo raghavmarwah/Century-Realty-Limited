@@ -30,10 +30,12 @@
         {
             this.buttonAddNewListing = new System.Windows.Forms.Button();
             this.dataGridViewActiveListings = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonSellListing = new System.Windows.Forms.Button();
+            this.buttonRefresh = new System.Windows.Forms.Button();
+            this.buttonViewAgents = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.labelDisplayUser = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActiveListings)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,32 +58,34 @@
             this.dataGridViewActiveListings.Size = new System.Drawing.Size(1721, 492);
             this.dataGridViewActiveListings.TabIndex = 1;
             // 
-            // button1
+            // buttonSellListing
             // 
-            this.button1.Location = new System.Drawing.Point(903, 588);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(226, 96);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonSellListing.Location = new System.Drawing.Point(903, 588);
+            this.buttonSellListing.Name = "buttonSellListing";
+            this.buttonSellListing.Size = new System.Drawing.Size(226, 96);
+            this.buttonSellListing.TabIndex = 2;
+            this.buttonSellListing.Text = "Sell This Listing";
+            this.buttonSellListing.UseVisualStyleBackColor = true;
+            this.buttonSellListing.Click += new System.EventHandler(this.buttonSellListing_Click);
             // 
-            // button2
+            // buttonRefresh
             // 
-            this.button2.Location = new System.Drawing.Point(1197, 588);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(223, 96);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonRefresh.Location = new System.Drawing.Point(1197, 588);
+            this.buttonRefresh.Name = "buttonRefresh";
+            this.buttonRefresh.Size = new System.Drawing.Size(223, 96);
+            this.buttonRefresh.TabIndex = 3;
+            this.buttonRefresh.Text = "Refresh Data";
+            this.buttonRefresh.UseVisualStyleBackColor = true;
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
             // 
-            // button3
+            // buttonViewAgents
             // 
-            this.button3.Location = new System.Drawing.Point(64, 591);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(225, 93);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonViewAgents.Location = new System.Drawing.Point(64, 591);
+            this.buttonViewAgents.Name = "buttonViewAgents";
+            this.buttonViewAgents.Size = new System.Drawing.Size(225, 93);
+            this.buttonViewAgents.TabIndex = 4;
+            this.buttonViewAgents.Text = "View Agents";
+            this.buttonViewAgents.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
@@ -92,15 +96,35 @@
             this.button4.Text = "button4";
             this.button4.UseVisualStyleBackColor = true;
             // 
+            // labelDisplayUser
+            // 
+            this.labelDisplayUser.AutoSize = true;
+            this.labelDisplayUser.Location = new System.Drawing.Point(679, 932);
+            this.labelDisplayUser.Name = "labelDisplayUser";
+            this.labelDisplayUser.Size = new System.Drawing.Size(70, 25);
+            this.labelDisplayUser.TabIndex = 6;
+            this.labelDisplayUser.Text = "label1";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(81, 931);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(206, 101);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // FormDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1977, 1199);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.labelDisplayUser);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.buttonViewAgents);
+            this.Controls.Add(this.buttonRefresh);
+            this.Controls.Add(this.buttonSellListing);
             this.Controls.Add(this.dataGridViewActiveListings);
             this.Controls.Add(this.buttonAddNewListing);
             this.Name = "FormDashboard";
@@ -108,15 +132,18 @@
             this.Load += new System.EventHandler(this.FormDashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActiveListings)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.Button buttonAddNewListing;
         private System.Windows.Forms.DataGridView dataGridViewActiveListings;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonSellListing;
+        private System.Windows.Forms.Button buttonRefresh;
+        private System.Windows.Forms.Button buttonViewAgents;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label labelDisplayUser;
+        private System.Windows.Forms.Button button1;
     }
 }
