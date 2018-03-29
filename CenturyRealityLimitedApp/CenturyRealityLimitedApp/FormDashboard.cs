@@ -16,5 +16,11 @@ namespace CenturyRealityLimitedApp
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormAddListing addListing = new FormAddListing();
+            addListing.Show();
+        }
     }
 }

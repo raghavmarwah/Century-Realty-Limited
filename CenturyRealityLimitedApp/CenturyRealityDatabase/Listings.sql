@@ -4,13 +4,14 @@
     [StreetAddress] NCHAR(30) NOT NULL, 
     [City] NCHAR(15) NOT NULL, 
     [Pincode] NCHAR(6) NOT NULL, 
-    [Province] NCHAR(2) NOT NULL, 
+    [Province] NCHAR(2) NOT NULL,
+	[HouseType] NCHAR(15) NOT NULL, 
     [Bedrooms] INT NOT NULL, 
     [Bathrooms] INT NOT NULL, 
     [FloorArea] DECIMAL(18, 2) NOT NULL, 
     [SellerName] NCHAR(30) NOT NULL, 
     [ListPrice] DECIMAL(18, 2) NOT NULL, 
     [Available] BIT NOT NULL, 
-    [SellDate] DATE NULL, 
+    [SellDate] DATETIME NULL, 
     [RealtorId] INT NULL
 )

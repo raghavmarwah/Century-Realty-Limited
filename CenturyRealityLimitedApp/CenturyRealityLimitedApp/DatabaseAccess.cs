@@ -56,6 +56,28 @@ namespace CenturyRealityLimitedApp
         }
 
         /// <summary>
+        /// Inserts a new lisitng to the database
+        /// </summary>
+        /// <param name="p">Property Object</param>
+        public void InsertListing(Property p)
+        {
+            string sql = "Insert Into Listings (StreetAddress, City, Pincode, Province, HouseType, Bedrooms, Bathrooms, FloorArea, SellerName, ListPrice, Available, SellDate, RealtorId) Values" +
+                $"('{p.StreetAddress}', '{p.City}', '{p.Pincode}', '{p.Province}', '{p.HouseType}', '{p.NumberOfBedrooms}', '{p.NumberOfBathrooms}', '{p.FloorArea}', '{p.SellerName}', '{p.ListPrice}', '{p.IsAvailable}', '{null}', '{null}')";
+
+            using (SqlCommand command = new SqlCommand(sql, dbConnection))
+            {
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch (SqlException ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}");
+                }
+            }
+        }
+
+        /// <summary>
         /// Truncate a table, but this does not reseed identity
         /// </summary>
         /// <param name="table"></param>

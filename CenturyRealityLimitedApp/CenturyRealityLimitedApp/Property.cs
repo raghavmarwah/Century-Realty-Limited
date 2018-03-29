@@ -12,6 +12,7 @@ namespace CenturyRealityLimitedApp
         public String City { get; set; }
         public String Pincode { get; set; }
         public String Province { get; set; }
+        public String HouseType { get; set; }
         public int NumberOfBedrooms { get; set; }
         public int NumberOfBathrooms { get; set; }
         public decimal FloorArea { get; set; }
