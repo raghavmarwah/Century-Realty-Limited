@@ -57,6 +57,7 @@ namespace CenturyRealityLimitedApp
             dataGridViewActiveListings.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             //Defining columns to add to the DataGridView
+            //Imp DataGridViewTextBOoxColumn not DataGridViewColumn
             DataGridViewTextBoxColumn[] columns = new DataGridViewTextBoxColumn[] {
                 new DataGridViewTextBoxColumn() {Name = "Listing Id" },
                 new DataGridViewTextBoxColumn() { Name = "Street Address" },
